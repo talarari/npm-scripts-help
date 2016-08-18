@@ -32,7 +32,7 @@ npm run help [regex]
 # adding documentation to scripts:
 
 ## inside package.json
-add a proptery call scriptshelp in the root of package.json like this:
+add a property called scriptshelp in the root of package.json like this:
 ```
 "scriptshelp" : {
   "help-message" : [
