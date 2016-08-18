@@ -1,19 +1,19 @@
 var chalk = require('chalk');
+
 var packageJson =require(process.cwd() + '/package.json');
 var scripts = packageJson.scripts || {};
+var scriptsHelpConfig = getScriptsHelpConfig();
+var specificScript = specificScript = process.argv[2];
 
-var scriptsHelp;
-try{
-    scriptsHelp = require(process.cwd() + '/.scriptshelprc.js');
+if (specificScript){
+    printScriptHelp(getScriptHelp(specificScript));
+    return;
 }
-catch (err) {
-    scriptsHelp = packageJson['scriptshelp'] || {};
-}
 
 
-if (scriptsHelp['help-message']){
+if (scriptsHelpConfig['help-message']){
     console.log(chalk.bold.cyan('----------------------------------------------'));
-    console.log(getDesc(scriptsHelp['help-message']));
+    console.log(getDesc(scriptsHelpConfig['help-message']));
     console.log(chalk.bold.cyan('----------------------------------------------'));
 }
 Object.keys(scripts)
@@ -23,7 +23,7 @@ Object.keys(scripts)
 
 function getScriptHelp (scriptName){
     var script = scripts[scriptName] || '';
-    var currentScriptHelp = scriptsHelp[scriptName];
+    var currentScriptHelp = scriptsHelpConfig[scriptName];
     if (typeof currentScriptHelp === 'string') {
         currentScriptHelp = {
             "Description":currentScriptHelp
@@ -61,4 +61,14 @@ function getDesc(line){
 
 function formatMultiLine(multiline){
     return '\n' +multiline.join('\n');
+}
+
+function getScriptsHelpConfig(){
+    try{
+        return require(process.cwd() + '/.scriptshelprc.js');
+    }
+    catch (err) {
+        return packageJson['scriptshelp'] || {};
+    }
+
 }
