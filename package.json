@@ -26,12 +26,7 @@
       "it can be a single line if it is a string",
       "or it can span on multiple lines if you use an array"
     ],
-    "test":{
-      "usage": [
-        "this is the first line",
-        "this is the second line"
-      ]
-    },
+    "test":"something",
     "help":{
       "usage": "npm run help",
       "some random thing i want to describe": [

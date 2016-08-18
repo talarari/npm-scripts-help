@@ -24,6 +24,11 @@ Object.keys(scripts)
 function getScriptHelp (scriptName){
     var script = scripts[scriptName] || '';
     var currentScriptHelp = scriptsHelp[scriptName];
+    if (typeof currentScriptHelp === 'string') {
+        currentScriptHelp = {
+            "Description":currentScriptHelp
+        }
+    }
     return Object.assign({},{
         name: scriptName,
         script:script
