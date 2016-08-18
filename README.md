@@ -77,8 +77,8 @@ module.exports = {
 ## scripts help object syntax
 * scriptshelp must be an object.
 * "help-message" is a special property that will show a general message before the scripts docs.
-* add a key with a name matching any script you have in your npm scripts.
-script name keys can be strings for single line description, arrays for multiline or objects.
+* add a key with a name matching any script you have in your npm scripts.    
+values can be strings for single line description, arrays for multiline or objects.
 objects can contain any key and their value must be a string or a string array.
 
 
