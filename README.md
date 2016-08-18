@@ -29,9 +29,9 @@ to filter scripts:
 npm run help [regex]
 ```
 
-## adding documentation to scripts:
+# adding documentation to scripts:
 
-# inside package.json
+## inside package.json
 add a proptery call scriptshelp in the root of package.json like this:
 ```
 "scriptshelp" : {
@@ -52,7 +52,7 @@ add a proptery call scriptshelp in the root of package.json like this:
 }
 ```
 
-# in .scriptshelprc.js file
+## in .scriptshelprc.js file
 add a file in the root of the project, next to package.json called scriptshelprc.js and export the scriptshelp object
 ```
 module.exports = {
