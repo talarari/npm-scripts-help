@@ -3,13 +3,7 @@ var chalk = require('chalk');
 var packageJson =require(process.cwd() + '/package.json');
 var scripts = packageJson.scripts || {};
 var scriptsHelpConfig = getScriptsHelpConfig();
-var specificScript = specificScript = process.argv[2];
-
-if (specificScript){
-    printScriptHelp(getScriptHelp(specificScript));
-    return;
-}
-
+var search = specificScript = process.argv[2];
 
 if (scriptsHelpConfig['help-message']){
     console.log(chalk.bold.cyan('----------------------------------------------'));
@@ -17,6 +11,10 @@ if (scriptsHelpConfig['help-message']){
     console.log(chalk.bold.cyan('----------------------------------------------'));
 }
 Object.keys(scripts)
+    .filter(function(scriptName){
+        if (!search) return true;
+        return new RegExp(search).test(scriptName)
+    })
     .map(getScriptHelp)
     .map(printScriptHelp)
 
