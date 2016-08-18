@@ -20,8 +20,14 @@ scripts:{
 ```
 
 ## Run
-To see all scripts run: npm run help
-to filter scripts run : npm run help [regex]
+To see all scripts:
+```
+npm run help
+```
+to filter scripts:
+```
+npm run help [regex]
+```
 
 ## adding documentation to scripts:
 
