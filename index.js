@@ -22,9 +22,9 @@ Object.keys(scripts)
 function getScriptHelp (scriptName){
     var script = scripts[scriptName] || '';
     var currentScriptHelp = scriptsHelpConfig[scriptName];
-    if (typeof currentScriptHelp === 'string') {
+    if (typeof currentScriptHelp === 'string' || Array.isArray(currentScriptHelp)) {
         currentScriptHelp = {
-            "Description":currentScriptHelp
+            "Description":getDesc(currentScriptHelp)
         }
     }
     return Object.assign({},{
