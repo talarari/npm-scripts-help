@@ -1,6 +1,6 @@
 {
   "name": "npm-scripts-help",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "lists the available npm scrips with option to add description to any script.",
   "main": "index.js",
   "scripts": {
@@ -20,19 +20,18 @@
   "dependencies": {
     "chalk": "^1.1.3"
   },
-  "scriptshelp":{
+  "scriptshelp": {
     "help-message": [
       "This is a big description of how to use the scripts.",
       "it can be a single line if it is a string",
       "or it can span on multiple lines if you use an array"
     ],
-    "test":"something",
-    "help":{
+    "test": "something",
+    "help": {
       "usage": "npm run help",
       "some random thing i want to describe": [
         "one two three four five six seven eight nine ten eleven tweleve thirteen forteen fifteen sixteen seventeen eighteen nineteen twenety tewentyone twentytwo"
       ]
     }
   }
-
 }
