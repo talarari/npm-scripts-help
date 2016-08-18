@@ -8,7 +8,7 @@ prints documentation for npm scripts.
 npm i --save-dev npm-scripts-help
 ```
 
-add help script to you package json's scripts
+add help script to your package json's scripts
 
 ```
 scripts:{
