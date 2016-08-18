@@ -4,7 +4,9 @@ prints documentation for npm scripts.
 ![screenshot](npm-scripts-help.png)
 
 ## Install
+```
 npm i --save-dev npm-scripts-help
+```
 
 add help script to you package json's scripts
 
