@@ -49,55 +49,16 @@ function getDesc(line){
     if (!line) return '';
 
     if (typeof line === 'string') {
-        if (fitsInConsoleWidth(line)) return line;
-        return formatMultiLine(breakLine(line))
+        return line;
     }
 
     if (Array.isArray(line) && line.length > 0 && typeof line[0] === 'string'){
-        return formatMultiLine(breakLinesArray(line));
+        return formatMultiLine(line);
     }
     return '';
 }
 
-function addPadding(str){
-    return '  ' + str;
-}
-
-function fitsInConsoleWidth(line){
-    return line.length < 70
-}
-
-function breakLine(line){
-
-    var words =line.split(' ');
-    var currentLine = words[0];
-    var lines = [];
-    line.split(' ').forEach(function(word){
-        word = word.trim();
-        if (fitsInConsoleWidth(currentLine + word)){
-            currentLine = currentLine +' '+  word;
-        }
-        else{
-            lines.push(currentLine);
-            currentLine = word;
-        }
-    });
-    lines.push(currentLine);
-    return lines;
-}
-
-function breakLinesArray(lines){
-    return lines.map(breakLine)
-        .reduce(function(prev,curr){
-            return prev.concat(curr)
-        },[])
-}
-
 
 function formatMultiLine(multiline){
-    return '\n' +multiline
-            .map(function(s){
-                return addPadding(s,2)
-            })
-            .join('\n');
+    return '\n' +multiline.join('\n');
 }
