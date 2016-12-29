@@ -29,9 +29,11 @@ to filter scripts:
 npm run help [regex]
 ```
 
-# adding documentation to scripts:
+# Adding documentation to scripts:
 
-## inside package.json
+There are 2 options :
+
+## 1) Inside `package.json`
 add a property called scriptshelp in the root of package.json like this:
 ```
 "scriptshelp" : {
@@ -52,8 +54,8 @@ add a property called scriptshelp in the root of package.json like this:
 }
 ```
 
-## in .scriptshelprc.js file
-add a file in the root of the project, next to package.json called scriptshelprc.js and export the scriptshelp object
+## 2) Create `.scriptshelprc.js` file
+add a file in the root of the project, next to `package.json` called `.scriptshelprc.js` and export the scriptshelp object
 ```
 module.exports = {
   "help-message" : [
