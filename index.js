@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var chalk = require('chalk');
 
 var packageJson =require(process.cwd() + '/package.json');
