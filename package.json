@@ -1,6 +1,9 @@
 {
   "name": "npm-scripts-help",
   "version": "0.7.0",
+  "bin": {
+    "npm-scripts-help": "./index.js"
+  },
   "description": "lists the available npm scrips with option to add description to any script.",
   "main": "index.js",
   "repository": {

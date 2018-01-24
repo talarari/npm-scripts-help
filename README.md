@@ -14,7 +14,7 @@ add help script to your package json's scripts
 scripts:{
   "build" : "node build.js",
   "start": "node start.js",
-  "help": "node node_modules/npm-scripts-help"
+  "help": "npm-scripts-help"
 }
 
 ```
